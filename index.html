@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
   <title>Website Sederhana</title>
-  <script src="script.js"></script>
-  </head>
+  <script src="script/script.js" defer></script>
+</head>
 <body>
 
   <header>
@@ -14,20 +14,19 @@
   </header>
 
   <main>
-    <h2>P</h2>
-    <p>Nugas coy</p>
-    <button onclick="tampilkanPesan()">Klik WOI!!!</button>
-  </main>
+  <h2>P</h2>
+  <p>Nugas coy</p>
+  <button onclick="tampilkanPesan()">Klik WOI!!!</button>
+</main>
+
+<div class="floating-widget">
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <p id="waktu-sekarang"></p>
+</div>
 
   <footer>
     &copy; 2025 Website Sederhana
   </footer>
 
-  <script>
-    function tampilkanPesan() {
-      alert("Pinjam 1 M!🔫😡");
-    }
-  </script>
-  
 </body>
 </html>
