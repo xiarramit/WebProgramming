@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   color: #4e342e;
+  background-image: linear-gradient(to bottom, #fffaf3, #fbe9e7);
 }
 
 body.login-page {
@@ -13,12 +14,13 @@ body.login-page {
   height: 100vh;
 }
 
-
+/* Header dan Navigasi */
 header {
-  background-color: #6d4c41;
-  color: white;
-  padding: 1rem;
+  background-color: #5d4037;
+  color: #fff8e1;
+  padding: 1.5rem;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 nav {
@@ -26,33 +28,68 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #ffecb3;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 12px;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: #ffe082;
+}
+
+/* Konten Umum */
 main {
   padding: 2rem;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
   background-color: #efebe9;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #4e342e;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }
 
 .hero .btn {
   display: inline-block;
-  margin-top: 1rem;
-  background-color: #a1887f;
+  margin-top: 1.5rem;
+  background-color: #8d6e63;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.4rem;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.hero .btn:hover {
+  background-color: #6d4c41;
+}
+
+.btn.secondary {
+  background-color: #ffe0b2;
+  color: #4e342e;
+  margin-left: 1rem;
+}
+
+.btn.secondary:hover {
+  background-color: #ffcc80;
+}
+
+/* Sections */
 section {
   margin-top: 2rem;
 }
@@ -60,44 +97,56 @@ section {
 .about, .contact {
   background-color: #fbe9e7;
   padding: 1.5rem;
-  margin-top: 2rem;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.about h2, .contact h2 {
+  color: #4e342e;
 }
 
 .about ul {
   list-style-type: none;
   padding: 0;
+  margin: 1rem 0 0;
 }
 
 .about li {
-  margin: 5px 0;
+  margin: 6px 0;
+  font-weight: 500;
 }
 
-.contact p {
-  margin: 0.5rem 0;
-}
-
+/* Formulir */
 form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
 }
 
 form input, form textarea, form button, form select {
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 form button {
   background-color: #6d4c41;
   color: white;
   cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+form button:hover {
+  background-color: #4e342e;
+}
+
+/* Tabel */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -106,21 +155,23 @@ table {
 
 table th, table td {
   border: 1px solid #ccc;
-  padding: 0.5rem;
+  padding: 0.6rem;
   text-align: left;
 }
 
 table th {
   background-color: #d7ccc8;
+  color: #3e2723;
 }
 
+/* Login Form */
 .login-form {
   background-color: #efebe9;
-  max-width: 400px;
+  max-width: 420px;
   margin: 3rem auto;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .login-form h2 {
@@ -130,7 +181,7 @@ table th {
 }
 
 .login-form input {
-  padding: 0.6rem;
+  padding: 0.7rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -138,10 +189,10 @@ table th {
 }
 
 .login-form button {
-  background-color: #6d4c41;
+  background-color: #5d4037;
   color: #fff;
   border: none;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border-radius: 6px;
   cursor: pointer;
   width: 100%;
@@ -150,5 +201,48 @@ table th {
 }
 
 .login-form button:hover {
-  background-color: #5d4037;
+  background-color: #4e342e;
+}
+
+/* Galeri */
+.gallery-page {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.gallery-page h2,
+.gallery-page p {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #4e342e;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-width: 250px; /* Membatasi ukuran maksimal agar rapi */
+  height: 200px; /* Tinggi tetap agar sejajar */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.logout-btn {
+  color: #fdd835;
+}
+
+.logout-btn:hover {
+  color: #fff176;
 }
