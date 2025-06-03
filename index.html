@@ -14,15 +14,30 @@
   </header>
 
   <main>
-  <h2>P</h2>
-  <p>Nugas coy</p>
-  <button onclick="tampilkanPesan()">Klik WOI!!!</button>
-</main>
+    <h2>Tambah User</h2>
+    <form id="formUser">
+      <input type="text" id="nama" placeholder="Nama" required>
+      <button type="submit">Tambah</button>
+    </form>
 
-<div class="floating-widget">
-  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
-  <p id="waktu-sekarang"></p>
-</div>
+    <h3>Daftar User</h3>
+    <table border="1" id="tabelUser">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data dari database akan muncul di sini -->
+      </tbody>
+    </table>
+  </main>
+
+  <div class="floating-widget">
+    <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+    <p id="waktu-sekarang"></p>
+  </div>
 
   <footer>
     &copy; 2025 Website Sederhana
