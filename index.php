@@ -40,8 +40,8 @@
                 <h2>Anggota Kelompok</h2>
                 <ul>
                   <li>Michelle Munayang - 230211060008</li>
-                  <li>Haffissa Mastur - NIM</li>
-                  <li>Evan Mokale - NIM</li>
+                  <li>Haffissa Aszahrra Mastur - 230211060005</li>
+                  <li>Evan Vick Mokale - 230211060028</li>
                 </ul>
               </section>';
 
