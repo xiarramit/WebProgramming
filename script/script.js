@@ -1,5 +1,5 @@
 function tampilkanPesan() {
-  alert("Pinjam 1 M!🔫😡");
+  alert("Pinjam dulu 1 M!!!🔫😡");
 }
 
 function toggleDarkMode() {
@@ -19,8 +19,8 @@ function tampilkanWaktu() {
   waktuElement.textContent = `${jam}:${menit}:${detik}`;
 }
 
+// Perbarui waktu setiap detik
 setInterval(tampilkanWaktu, 1000);
-
 window.addEventListener("DOMContentLoaded", () => {
   tampilkanWaktu();
   const toggleButton = document.getElementById("darkModeToggle");
@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const nama = document.getElementById("nama").value;
 
-    const endpoint = "https://corsproxy.io/?" + encodeURIComponent("https://web-project-be.great-site.net/api/tambah_user.php");
-
-    fetch(endpoint, {
+    fetch("api/tambah_user.php", { 
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -63,9 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function ambilUser() {
-  const endpoint = "https://corsproxy.io/?" + encodeURIComponent("https://web-project-be.great-site.net/api/ambil_user.php");
-
-  fetch(endpoint)
+  fetch("api/ambil_user.php") 
     .then(res => {
       if (!res.ok) throw new Error("Gagal ambil data dari server");
       return res.json();
