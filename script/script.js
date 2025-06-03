@@ -42,7 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       body: `nama=${encodeURIComponent(nama)}`
     })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error("Gagal mengirim data");
+      return res.json();
+    })
     .then(data => {
       alert(data.message);
       if (data.status === "success") {
@@ -51,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch(err => {
-      alert("Terjadi kesalahan saat mengirim data:\n" + err);
-      console.error("Gagal kirim ke tambah_user.php:", err);
+      alert("Gagal menambahkan user: " + err.message);
+      console.error("Error kirim:", err);
     });
   });
 });
@@ -60,9 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function ambilUser() {
   fetch("https://web-project-be.great-site.net/api/ambil_user.php")
     .then(res => {
-      if (!res.ok) {
-        throw new Error("HTTP error! status: " + res.status);
-      }
+      if (!res.ok) throw new Error("Gagal ambil data dari server");
       return res.json();
     })
     .then(users => {
@@ -74,7 +75,7 @@ function ambilUser() {
       });
     })
     .catch(err => {
-      alert("Terjadi kesalahan saat mengambil data:\n" + err);
-      console.error("Gagal fetch ambil_user.php:", err);
+      alert("Gagal mengambil data: " + err.message);
+      console.error("Fetch error:", err);
     });
 }
