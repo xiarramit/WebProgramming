@@ -23,7 +23,6 @@ function tampilkanWaktu() {
 setInterval(tampilkanWaktu, 1000);
 window.addEventListener("DOMContentLoaded", () => {
   tampilkanWaktu();
-  // Set ikon sesuai mode awal
   const toggleButton = document.getElementById("darkModeToggle");
   const isDark = document.body.classList.contains("dark-mode");
   toggleButton.textContent = isDark ? "🌞" : "🌙";
@@ -50,13 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("formUser").reset();
         ambilUser();
       }
+    })
+    .catch(err => {
+      alert("Terjadi kesalahan saat mengirim data:\n" + err);
+      console.error("Gagal kirim ke tambah_user.php:", err);
     });
   });
 });
 
 function ambilUser() {
   fetch("https://web-project-be.great-site.net/api/ambil_user.php")
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("HTTP error! status: " + res.status);
+      }
+      return res.json();
+    })
     .then(users => {
       const tbody = document.querySelector("#tabelUser tbody");
       tbody.innerHTML = "";
@@ -64,5 +72,9 @@ function ambilUser() {
         const row = `<tr><td>${user.id}</td><td>${user.nama}</td></tr>`;
         tbody.insertAdjacentHTML("beforeend", row);
       });
+    })
+    .catch(err => {
+      alert("Terjadi kesalahan saat mengambil data:\n" + err);
+      console.error("Gagal fetch ambil_user.php:", err);
     });
 }
