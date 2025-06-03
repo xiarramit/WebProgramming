@@ -10,6 +10,7 @@
     <h1>Pesan AramiSweets</h1>
     <nav>
       <a href="index.php">Home</a>
+      <a href="gallery.php">Galeri</a> <!-- Tambahan Galeri -->
       <a href="order_form.php">Pesan</a>
       <a href="login.php">Login Admin</a>
     </nav>
